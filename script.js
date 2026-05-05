@@ -1,4 +1,12 @@
-const vozac = "Max Verstappen"
+let tema = "dark"
+
+function promeniTemu(trenutna) {
+    if (trenutna === "dark") {
+        return "light"
+    } else {
+        return "dark"
+    }
+}
 
 function velikaSlova(tekst) {
     return tekst.toUpperCase()
@@ -12,15 +20,27 @@ function proveriEmail(email) {
     }
 }
 
-const pobede = [19, 15, 10, 8]
+const dugme = document.getElementById("temaBtn")
 
-function ukupnoPobeda(niz) {
-    let suma = 0
-    for (let i = 0; i < niz.length; i++) {
-        suma += niz[i]
-    }
-    return suma
+if (dugme) {
+    dugme.addEventListener("click", function() {
+        tema = promeniTemu(tema)
+
+        if (tema === "light") {
+            document.body.style.background = "white"
+            document.body.style.color = "black"
+        } else {
+            document.body.style.background = "black"
+            document.body.style.color = "white"
+        }
+    })
 }
+
+const naslovi = document.querySelectorAll("h1, h2")
+
+naslovi.forEach(n => {
+    n.textContent = velikaSlova(n.textContent)
+})
 
 const kartice = document.querySelectorAll(".card")
 
@@ -31,15 +51,15 @@ kartice.forEach(k => {
     })
 })
 
-const forma = document.querySelector(".form")
+const forma = document.getElementById("kontaktForma")
 
 if (forma) {
     forma.addEventListener("submit", function(e) {
         e.preventDefault()
 
-        const ime = this.querySelector("input[type='text']").value
-        const email = this.querySelector("input[type='email']").value
-        const poruka = this.querySelector("textarea").value
+        const ime = document.getElementById("ime").value
+        const email = document.getElementById("email").value
+        const poruka = document.getElementById("poruka").value
 
         if (ime === "" || email === "" || poruka === "") {
             alert("Popuni sva polja")
@@ -51,23 +71,9 @@ if (forma) {
             return
         }
 
-        const porukaVelika = velikaSlova(poruka)
-
         const rezultat = document.createElement("p")
-        rezultat.textContent = "Hvala " + ime + ", poruka: " + porukaVelika
+        rezultat.textContent = "Hvala " + ime + ", poruka: " + velikaSlova(poruka)
 
         document.body.appendChild(rezultat)
     })
-}
-
-const sekcija = document.querySelector(".content")
-
-if (sekcija) {
-    let html = ""
-
-    for (let i = 0; i < pobede.length; i++) {
-        html += "<p>Sezona " + (i+1) + ": " + pobede[i] + " pobeda</p>"
-    }
-
-    sekcija.innerHTML += html
 }

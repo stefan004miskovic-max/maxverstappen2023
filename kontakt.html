@@ -10,6 +10,7 @@
 
 <nav class="nav">
 <div class="logo">Max 2023</div>
+<button id="temaBtn">Promeni temu</button>
 <input type="checkbox" id="menu-toggle">
 <label for="menu-toggle" class="hamburger">&#9776;</label>
 <ul class="menu">
@@ -23,11 +24,14 @@
 <section class="content">
 <h2>Kontakt Forma</h2>
 
-<form class="form">
-<input type="text" placeholder="Ime" required>
-<input type="email" placeholder="E-mail" required>
-<textarea placeholder="Poruka" required></textarea>
+<form class="form" id="kontaktForma">
+
+<input type="text" id="ime" placeholder="Ime" required>
+<input type="email" id="email" placeholder="E-mail" required>
+<textarea id="poruka" placeholder="Poruka" required></textarea>
+
 <button type="submit">Pošalji</button>
+
 </form>
 
 </section>
