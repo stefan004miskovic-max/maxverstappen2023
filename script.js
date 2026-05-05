@@ -13,7 +13,7 @@ function velikaSlova(tekst) {
 }
 
 function proveriEmail(email) {
-    if (email.includes("@")) {
+    if (email.includes("@") && email.includes(".")) {
         return true
     } else {
         return false
