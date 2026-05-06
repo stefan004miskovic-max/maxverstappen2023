@@ -141,3 +141,13 @@ strong {
         flex-direction: column;
     }
 }
+
+#temaBtn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
