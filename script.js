@@ -13,7 +13,7 @@ function velikaSlova(tekst) {
 }
 
 function proveriEmail(email) {
-    if (email.includes("@") && email.includes(".")) {
+    if (email.includes("@") ) {
         return true
     } else {
         return false
@@ -76,4 +76,37 @@ if (forma) {
 
         document.body.appendChild(rezultat)
     })
+}
+
+function ispis(x){
+
+var ispis="";
+
+var dest=document.getElementById("polje");
+
+var vozaci=["Max Verstappen","Sergio Perez","Lewis Hamilton","Charles Leclerc"];
+
+var timovi=["Red Bull Racing","Mercedes","Ferrari","McLaren"];
+
+if(x=='Vozaci'){
+
+ispis="<ul><h3>Vozači Formule 1</h3>";
+
+for(i=0;i<vozaci.length;i++)
+ispis+="<li>"+vozaci[i]+"</li>";
+
+ispis+="</ul>";
+}
+
+else{
+
+ispis="<ul><h3>F1 Timovi</h3>";
+
+for(i=0;i<timovi.length;i++)
+ispis+="<li>"+timovi[i]+"</li>";
+
+ispis+="</ul>";
+}
+
+dest.innerHTML=ispis;
 }
