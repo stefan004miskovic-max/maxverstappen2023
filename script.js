@@ -78,35 +78,36 @@ if (forma) {
     })
 }
 
-function ispis(x){
+function ispis(x) {
 
-var ispis="";
+    var tekst = "";
 
-var dest=document.getElementById("polje");
+    var dest = document.getElementById("polje");
 
-var vozaci=["Max Verstappen","Sergio Perez","Lewis Hamilton","Charles Leclerc"];
+    var vozaci = ["Max Verstappen", "Sergio Perez", "Lewis Hamilton", "Charles Leclerc"];
 
-var timovi=["Red Bull Racing","Mercedes","Ferrari","McLaren"];
+    var timovi = ["Red Bull Racing", "Mercedes", "Ferrari", "McLaren"];
 
-if(x=='Vozaci'){
+    if (x == 'Vozaci') {
 
-ispis="<ul><h3>Vozači Formule 1</h3>";
+        tekst = "<h3>Vozači sezone 2023</h3><ul>";
 
-for(i=0;i<vozaci.length;i++)
-ispis+="<li>"+vozaci[i]+"</li>";
+        for (let i = 0; i < vozaci.length; i++) {
+            tekst += "<li>" + vozaci[i] + "</li>";
+        }
 
-ispis+="</ul>";
-}
+        tekst += "</ul>";
 
-else{
+    } else {
 
-ispis="<ul><h3>F1 Timovi</h3>";
+        tekst = "<h3>F1 Timovi 2023</h3><ul>";
 
-for(i=0;i<timovi.length;i++)
-ispis+="<li>"+timovi[i]+"</li>";
+        for (let i = 0; i < timovi.length; i++) {
+            tekst += "<li>" + timovi[i] + "</li>";
+        }
 
-ispis+="</ul>";
-}
+        tekst += "</ul>";
+    }
 
-dest.innerHTML=ispis;
+    dest.innerHTML = tekst;
 }
